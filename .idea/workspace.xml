@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee37a281-ed79-4d6c-8286-c288148a2b3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/HW3_Task3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HW3_Task4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,14 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HW3_Task3">
-    <configuration name="HW1_Task4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HW1_Task4" />
-      <module name="HO_AQA_HomeWorks" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.HW3_Task4">
     <configuration name="HW1_Task8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HW1_Task8" />
       <module name="HO_AQA_HomeWorks" />
@@ -83,13 +77,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HW3_Task4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HW3_Task4" />
+      <module name="HO_AQA_HomeWorks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HW3_Task4" />
         <item itemvalue="Application.HW3_Task3" />
         <item itemvalue="Application.HW3_Task2" />
         <item itemvalue="Application.HW3_Task1" />
         <item itemvalue="Application.HW1_Task8" />
-        <item itemvalue="Application.HW1_Task4" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +112,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
