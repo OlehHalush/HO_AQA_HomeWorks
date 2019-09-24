@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee37a281-ed79-4d6c-8286-c288148a2b3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/HW3_Task9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HW3_Task10.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HW3_Task8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HW3_Task8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HW3_Task8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HW3_Task8.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,9 +48,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HW3_Task9">
-    <configuration name="HW3_Task5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HW3_Task5" />
+  <component name="RunManager" selected="Application.HW3_Task10">
+    <configuration name="HW3_Task10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="HW3_Task10" />
       <module name="HO_AQA_HomeWorks" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -88,11 +86,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HW3_Task10" />
         <item itemvalue="Application.HW3_Task9" />
         <item itemvalue="Application.HW3_Task8" />
         <item itemvalue="Application.HW3_Task7" />
         <item itemvalue="Application.HW3_Task6" />
-        <item itemvalue="Application.HW3_Task5" />
       </list>
     </recent_temporary>
   </component>
