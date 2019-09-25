@@ -13,7 +13,7 @@ public class HW3_Task11 {
         int triangleHeight = 3;
 
         for (int i = 1; i <= triangleHeight; i++) {
-            for (int j = 1; j <= triangleHeight - 1 + i; j++) {
+            for (int j = 1; j < triangleHeight + i; j++) {
                 //Write spaces before asterisks
                 if (j <= triangleHeight - i) {
                     System.out.print(" ");
