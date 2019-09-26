@@ -1,3 +1,10 @@
+/*
+Write a program which prints the next figure to the console:
+**********
+**********
+**********
+**********
+*/
 public class HW3_Task8 {
     public static void main(String[] args){
         int rows = 4;
