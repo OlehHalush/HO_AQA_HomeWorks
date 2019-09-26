@@ -11,7 +11,7 @@ public class HW3_Task6 {
 
     public static int getEvenDigitSum(int a) {
         int sum = 0;
-        while(a > 0 ){
+        while (a > 0) {
             int digit = a % 10;
             a = a / 10;
             sum += digit;
