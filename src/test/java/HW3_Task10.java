@@ -25,11 +25,10 @@ public class HW3_Task10 {
                         System.out.print('*');
                     } else if (j == columns - 1) {
                         System.out.print('*');
-                        System.out.println(" ");
+                        System.out.println();
                     } else {
                         System.out.print(" ");
                     }
-
                 }
             }
         }
