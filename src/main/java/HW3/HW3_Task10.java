@@ -1,3 +1,5 @@
+package HW3;
+
 /*
 Write a program which prints the next figure to the console:
 **********

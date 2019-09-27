@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task3 {
     static int a = 2;
     static int b = 5;

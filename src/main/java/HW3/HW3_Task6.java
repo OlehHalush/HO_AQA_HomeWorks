@@ -1,9 +1,10 @@
+package HW3;
+
 /*
 Write a method named getEvenDigitSum with one parameter of the type "int".
 The method should return the sum of even digits within the number.
 If the number is negative, method should return -1;
  */
-
 public class HW3_Task6 {
     public static void main(String[] args) {
         System.out.println(getEvenDigitSum(1001));

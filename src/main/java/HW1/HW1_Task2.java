@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task2 {
     byte myByte = 2;
     short myShort = 32000;
