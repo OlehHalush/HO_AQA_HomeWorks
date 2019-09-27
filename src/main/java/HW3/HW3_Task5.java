@@ -1,3 +1,5 @@
+package HW3;
+
 /*
 Write a function which calculates and returns the minimum of 4 arguments.
 public static void main(String[] args) {

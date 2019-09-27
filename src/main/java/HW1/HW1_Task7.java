@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task7 {
     public static void main(String[] args) {
         int a = 10;

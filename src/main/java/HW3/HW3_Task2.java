@@ -1,3 +1,5 @@
+package HW3;
+
 /*
 Print all the numbers from 1 to 100, which are divided by 3 without a remainder.
 */

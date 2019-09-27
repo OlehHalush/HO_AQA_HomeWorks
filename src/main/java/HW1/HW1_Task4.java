@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task4 {
     public static double a = 5;
     public static double b = 10;

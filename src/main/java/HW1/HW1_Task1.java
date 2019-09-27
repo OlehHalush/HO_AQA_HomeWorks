@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task1 {
     static String hello = "Hello World";
 

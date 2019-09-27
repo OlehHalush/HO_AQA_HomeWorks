@@ -1,3 +1,5 @@
+package HW1;
+
 public class HW1_Task6 {
     public static void main(String[] args) {
         //String s = "Java";

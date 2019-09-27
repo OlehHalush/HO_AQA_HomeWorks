@@ -1,3 +1,5 @@
+package HW3;
+
 import java.lang.reflect.Array;
 /*
 Print numbers from 10 to 20 using all known cycles.
