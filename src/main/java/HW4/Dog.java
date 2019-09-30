@@ -20,11 +20,7 @@ public class Dog {
     }
 
     public void setName(String name) {
-        if (name.isEmpty()) {
-            this.name = "Invalid name";
-        } else {
-            this.name = name;
-        }
+        this.name = name.isEmpty() ? "Invalid name" : name;
     }
 
     public int getAge() {
@@ -32,17 +28,18 @@ public class Dog {
     }
 
     public void setAge(int age) {
-        if (age <= 0) {
-            this.age = 1;
-        } else {
-            this.age = age;
-        }
+        this.age = age <= 0 ? 1 : age;
+    }
+
+    @Override
+    public String toString() {
+        return "Name = " + name + ", age = " + age;
     }
 
     public static void main(String[] args) {
         Dog myDog = new Dog("Pitbul", 33);
         myDog.setAge(2);
         myDog.setName("Chelsie");
-        System.out.println("Name: " + myDog.getName() + ", age: " + myDog.getAge());
+        System.out.println(myDog);
     }
 }
