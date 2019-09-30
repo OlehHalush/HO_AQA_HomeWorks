@@ -7,11 +7,11 @@ weight, age, first name, last name, height.
 2) Add to the class a constructor with parameters which initialize all the fields.
 */
 public class Human {
-    public int weight;
-    public int age;
-    public String firstName;
-    public String lastName;
-    public int height;
+    private int weight;
+    private int age;
+    private String firstName;
+    private String lastName;
+    private int height;
 
     public Human(int weight, int age, String firstName, String lastName, int height) {
         this.weight = weight;
@@ -21,8 +21,33 @@ public class Human {
         this.height = height;
     }
 
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    @Override
+    public String toString() {
+        return "weight = " + weight + ", age = " + age + ", firstName = " + firstName + ", lastName = " + lastName + ", height = " + height;
+    }
+
     public static void main(String[] args) {
         Human myHuman = new Human(74, 30, "Antony", "Hopkins", 185);
-        System.out.println("Weight: " + myHuman.weight + ", age: " + myHuman.age + ", first name: " + myHuman.firstName + ", last name: " + myHuman.lastName + ", height: " + myHuman.height);
+        System.out.println(myHuman);
     }
 }
