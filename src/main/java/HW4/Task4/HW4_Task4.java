@@ -1,4 +1,4 @@
-package HW4;
+package HW4.Task4;
 
 /*
 Correct nine classes: Worker (employee), Clerk (clerk), IT (IT specialist), Programmer (programmer), ProjectManager (project manager), CTO (CTO), HR (recruiter), OfficeManager (office manager), Cleaner (cleaner).

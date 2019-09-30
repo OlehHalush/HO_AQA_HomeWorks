@@ -1,4 +1,4 @@
-package HW4;
+package HW4.Task7;
 
 /*
 Start with a base class of a Vehicle, then create a Car class that inherits from this base class.
@@ -30,7 +30,6 @@ public class Vehicle {
         this.currentVelocity = velocity;
         this.currentDirection = direction;
         System.out.println("Vehicle.move():Moving at " + currentVelocity + " in direction " + currentDirection);
-
     }
 
     public void stop() {
@@ -95,21 +94,25 @@ public class Vehicle {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "currentVelocity=" + currentVelocity +
+                ", currentDirection=" + currentDirection +
+                '}';
+    }
+
     public static void main(String[] args) {
         Mercedes myCustomCar = new Mercedes("GL", "4", 2, "sedan", "black", "manual");
         myCustomCar.move(10, 1);
-        System.out.println(myCustomCar.getCurrentDirection());
-        System.out.println(myCustomCar.getCurrentVelocity());
+        System.out.println(myCustomCar);
         myCustomCar.steer(25);
         myCustomCar.move(-5, 0);
-        myCustomCar.steer(-20);
         System.out.println(myCustomCar.getName());
         myCustomCar.stop();
-        System.out.println(myCustomCar.getCurrentDirection());
-        System.out.println(myCustomCar.getCurrentVelocity());
+        System.out.println(myCustomCar);
         myCustomCar.move(50, 15);
-        System.out.println(myCustomCar.getCurrentDirection());
-        System.out.println(myCustomCar.getCurrentVelocity());
+        System.out.println(myCustomCar);
     }
 }
 

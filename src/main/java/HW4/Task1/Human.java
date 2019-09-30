@@ -1,4 +1,4 @@
-package HW4;
+package HW4.Task1;
 
 /*
 Create a class ""Human"". A human should have the following attributes:

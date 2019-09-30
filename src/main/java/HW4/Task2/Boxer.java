@@ -1,4 +1,4 @@
-package HW4;
+package HW4.Task2;
 
 /*
 Implement the method fight() depending on weight, strength and age of the boxer:
