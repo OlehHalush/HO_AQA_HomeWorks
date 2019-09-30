@@ -25,9 +25,9 @@ public class Boxer {
 1) if ourBoxer.fight(anotherBoxer) returns true, then anotherBoxer.fight(outBoxer) should return false;
 */
 public class Boxer {
-    public int age;
-    public int weight;
-    public int strength;
+    private int age;
+    private int weight;
+    private int strength;
 
     public Boxer(int age, int weight, int strength) {
         this.age = age;
@@ -35,26 +35,47 @@ public class Boxer {
         this.strength = strength;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+    //For higher parameter value boxer gets the point
+    //At the end who get the highest point wins the fight
     public boolean fight(Boxer anotherBoxer) {
         int ourBoxerPoints = 0;
         int anotherBoxerPoints = 0;
-
-        if (this.age > anotherBoxer.age || this.age == anotherBoxer.age) {
-            ourBoxerPoints += 1;
+        //Comparing age parameter of boxers
+        if (this.age > anotherBoxer.age) {
+            ourBoxerPoints++;
+        } else if (this.age == anotherBoxer.age) {
+            System.out.println("No one got points for age parameter");
         } else {
-            anotherBoxerPoints += 1;
+            anotherBoxerPoints++;
         }
-        if (this.weight > anotherBoxer.weight || this.weight == anotherBoxer.weight) {
-            ourBoxerPoints += 1;
+        //Comparing weight parameter of boxers
+        if (this.weight > anotherBoxer.weight) {
+            ourBoxerPoints++;
+        } else if (this.weight == anotherBoxer.weight) {
+            System.out.println("No one got points for weight parameter");
         } else {
-            anotherBoxerPoints += 1;
+            anotherBoxerPoints++;
         }
-        if (this.strength > anotherBoxer.strength || this.strength == anotherBoxer.strength) {
-            ourBoxerPoints += 1;
+        //Comparing strength parameter of boxers
+        if (this.strength > anotherBoxer.strength) {
+            ourBoxerPoints++;
+        } else if (this.strength == anotherBoxer.strength) {
+            System.out.println("No one got points for strength parameter");
         } else {
-            anotherBoxerPoints += 1;
+            anotherBoxerPoints++;
         }
-        if (ourBoxerPoints > anotherBoxerPoints) {
+        if (ourBoxerPoints >= anotherBoxerPoints) {
             return true;
         }
         return false;
