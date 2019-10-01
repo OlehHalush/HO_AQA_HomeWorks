@@ -77,22 +77,22 @@ public class Printer {
         this.printedPages = 0;
     }
 
-    public void print(int pages, String color, boolean isDuplex) {
+    public void print(int pages, Color color, boolean isDuplex) {
         int genericTonerLevel = 0;
-        switch (color.toLowerCase()) {
-            case "black":
+        switch (color) {
+            case BLACK:
                 genericTonerLevel = getTonerLevelBlack();
                 setTonerLevelBlack(printGenericColorPages(pages, isDuplex, genericTonerLevel));
                 break;
-            case "blue":
+            case BLUE:
                 genericTonerLevel = getTonerLevelBlue();
                 setTonerLevelBlue(printGenericColorPages(pages, isDuplex, genericTonerLevel));
                 break;
-            case "magenta":
+            case MAGENTA:
                 genericTonerLevel = getTonerLevelMagenta();
                 setTonerLevelMagenta(printGenericColorPages(pages, isDuplex, genericTonerLevel));
                 break;
-            case "yellow":
+            case YELLOW:
                 genericTonerLevel = getTonerLevelYellow();
                 setTonerLevelYellow(printGenericColorPages(pages, isDuplex, genericTonerLevel));
                 break;
@@ -126,22 +126,22 @@ public class Printer {
     }
 
     //Maximum toner level will be 100 which equals to 100 pages it can print
-    public void fillUp(int tonerVolume, String color) {
+    public void fillUp(int tonerVolume, Color color) {
         int genericTonerLevel = 0;
-        switch (color.toLowerCase()) {
-            case "black":
+        switch (color) {
+            case BLACK:
                 genericTonerLevel = getTonerLevelBlack();
                 setTonerLevelBlack(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
                 break;
-            case "blue":
+            case BLUE:
                 genericTonerLevel = getTonerLevelBlue();
                 setTonerLevelBlue(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
                 break;
-            case "magenta":
+            case MAGENTA:
                 genericTonerLevel = getTonerLevelMagenta();
                 setTonerLevelMagenta(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
                 break;
-            case "yellow":
+            case YELLOW:
                 genericTonerLevel = getTonerLevelYellow();
                 setTonerLevelYellow(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
                 break;
@@ -200,9 +200,9 @@ public class Printer {
     public static void main(String[] args) {
         Printer myPrinter = new Printer("HP", "Q3000", 100, 100, 100, 100);
         System.out.println(myPrinter);
-        myPrinter.print(10, "yellow", true);
+        myPrinter.print(10, Color.YELLOW, true);
         System.out.println(myPrinter);
-        myPrinter.fillUp(5, "yellow");
+        myPrinter.fillUp(5, Color.YELLOW);
         System.out.println(myPrinter);
     }
 }

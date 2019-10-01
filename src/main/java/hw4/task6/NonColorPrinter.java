@@ -6,9 +6,9 @@ public class NonColorPrinter extends Printer {
     }
 
     @Override
-    public void print(int pages, String color, boolean isDuplex) {
-        switch (color.toLowerCase()) {
-            case "black":
+    public void print(int pages, Color color, boolean isDuplex) {
+        switch (color) {
+            case BLACK:
                 int genericTonerLevel = getTonerLevelBlack();
                 setTonerLevelBlack(printGenericColorPages(pages, isDuplex, genericTonerLevel));
                 break;
@@ -18,9 +18,9 @@ public class NonColorPrinter extends Printer {
     }
 
     @Override
-    public void fillUp(int tonerVolume, String color) {
-        switch (color.toLowerCase()) {
-            case "black":
+    public void fillUp(int tonerVolume, Color color) {
+        switch (color) {
+            case BLACK:
                 int genericTonerLevel = getTonerLevelBlack();
                 setTonerLevelBlack(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
                 break;
@@ -32,9 +32,9 @@ public class NonColorPrinter extends Printer {
     public static void main(String[] args) {
         NonColorPrinter myNonColorPrinter = new NonColorPrinter("HP", "Q3000", 100, 100, 100, 100);
         System.out.println(myNonColorPrinter);
-        myNonColorPrinter.print(10, "black", true);
+        myNonColorPrinter.print(10, Color.BLACK, true);
         System.out.println(myNonColorPrinter);
-        myNonColorPrinter.fillUp(5, "black");
+        myNonColorPrinter.fillUp(5, Color.BLACK);
         System.out.println(myNonColorPrinter);
     }
 }
