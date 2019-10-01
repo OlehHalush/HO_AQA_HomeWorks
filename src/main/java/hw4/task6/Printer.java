@@ -8,14 +8,13 @@ It should have fields for toner level, number of pages printed, and also whether
 Add methods to fill up the toner (up to a maximum of 100%), another method to simulate printing a page(which should increase the number of pages printed).
 Decide on the scope, whether to use constructors, and anything else you think is needed."
 */
-public class Printer {
+public abstract class Printer {
     private String manufacturer;
     private String model;
-    private boolean isDuplex;
-    private int tonerLevelBlack;
-    private int tonerLevelMagenta;
-    private int tonerLevelYellow;
-    private int tonerLevelBlue;
+    protected int tonerLevelBlack;
+    protected int tonerLevelMagenta;
+    protected int tonerLevelYellow;
+    protected int tonerLevelBlue;
     private int printedPages;
 
     public String getManufacturer() {
@@ -24,10 +23,6 @@ public class Printer {
 
     public String getModel() {
         return model;
-    }
-
-    public boolean isDuplex() {
-        return isDuplex;
     }
 
     public int getPrintedPages() {
@@ -67,39 +62,13 @@ public class Printer {
     }
 
     //Only 2 types of printers will be available, colored and black-white
-    public Printer(String manufacturer, String model, int tonerLevelBlack, int tonerLevelBlue, int tonerLevelMagenta, int tonerLevelYellow) {
+    public Printer(String manufacturer, String model) {
         this.manufacturer = manufacturer;
         this.model = model;
-        this.tonerLevelBlack = tonerLevelBlack;
-        this.tonerLevelBlue = tonerLevelBlue;
-        this.tonerLevelMagenta = tonerLevelMagenta;
-        this.tonerLevelYellow = tonerLevelYellow;
         this.printedPages = 0;
     }
 
-    public void print(int pages, Color color, boolean isDuplex) {
-        int genericTonerLevel = 0;
-        switch (color) {
-            case BLACK:
-                genericTonerLevel = getTonerLevelBlack();
-                setTonerLevelBlack(printGenericColorPages(pages, isDuplex, genericTonerLevel));
-                break;
-            case BLUE:
-                genericTonerLevel = getTonerLevelBlue();
-                setTonerLevelBlue(printGenericColorPages(pages, isDuplex, genericTonerLevel));
-                break;
-            case MAGENTA:
-                genericTonerLevel = getTonerLevelMagenta();
-                setTonerLevelMagenta(printGenericColorPages(pages, isDuplex, genericTonerLevel));
-                break;
-            case YELLOW:
-                genericTonerLevel = getTonerLevelYellow();
-                setTonerLevelYellow(printGenericColorPages(pages, isDuplex, genericTonerLevel));
-                break;
-            default:
-                System.out.println("Such color is not supported by this printer.");
-        }
-    }
+    public abstract void print(int pages, Color color, boolean isDuplex);
 
     protected int printGenericColorPages(int pages, boolean isDuplex, int genericTonerLevel) {
         if (genericTonerLevel == 0) {
@@ -126,30 +95,7 @@ public class Printer {
     }
 
     //Maximum toner level will be 100 which equals to 100 pages it can print
-    public void fillUp(int tonerVolume, Color color) {
-        int genericTonerLevel = 0;
-        switch (color) {
-            case BLACK:
-                genericTonerLevel = getTonerLevelBlack();
-                setTonerLevelBlack(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
-                break;
-            case BLUE:
-                genericTonerLevel = getTonerLevelBlue();
-                setTonerLevelBlue(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
-                break;
-            case MAGENTA:
-                genericTonerLevel = getTonerLevelMagenta();
-                setTonerLevelMagenta(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
-                break;
-            case YELLOW:
-                genericTonerLevel = getTonerLevelYellow();
-                setTonerLevelYellow(fillUpGenericColorToner(tonerVolume, genericTonerLevel));
-                break;
-            default:
-                System.out.println("Such toner doesn't exist");
-
-        }
-    }
+    public abstract void fillUp(int tonerVolume, Color color);
 
     protected int fillUpGenericColorToner(int tonerVolume, int genericTonerLevel) {
         if (genericTonerLevel + tonerVolume <= 100) {
@@ -195,14 +141,5 @@ public class Printer {
                 ", tonerLevelBlue=" + tonerLevelBlue +
                 ", printedPages=" + printedPages +
                 '}';
-    }
-
-    public static void main(String[] args) {
-        Printer myPrinter = new Printer("HP", "Q3000", 100, 100, 100, 100);
-        System.out.println(myPrinter);
-        myPrinter.print(10, Color.YELLOW, true);
-        System.out.println(myPrinter);
-        myPrinter.fillUp(5, Color.YELLOW);
-        System.out.println(myPrinter);
     }
 }

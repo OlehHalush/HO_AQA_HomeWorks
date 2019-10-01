@@ -1,8 +1,9 @@
 package hw4.task6;
 
 public class NonColorPrinter extends Printer {
-    public NonColorPrinter(String manufacturer, String model, int tonerLevelBlack, int tonerLevelBlue, int tonerLevelMagenta, int tonerLevelYellow) {
-        super(manufacturer, model, tonerLevelBlack, tonerLevelBlue, tonerLevelMagenta, tonerLevelYellow);
+    public NonColorPrinter(String manufacturer, String model) {
+        super(manufacturer, model);
+        this.tonerLevelBlack = 100;
     }
 
     @Override
@@ -30,7 +31,7 @@ public class NonColorPrinter extends Printer {
     }
 
     public static void main(String[] args) {
-        NonColorPrinter myNonColorPrinter = new NonColorPrinter("HP", "Q3000", 100, 100, 100, 100);
+        NonColorPrinter myNonColorPrinter = new NonColorPrinter("HP", "Q3000");
         System.out.println(myNonColorPrinter);
         myNonColorPrinter.print(10, Color.BLACK, true);
         System.out.println(myNonColorPrinter);

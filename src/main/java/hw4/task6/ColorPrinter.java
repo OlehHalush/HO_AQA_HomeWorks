@@ -1,8 +1,12 @@
 package hw4.task6;
 
 public class ColorPrinter extends Printer {
-    public ColorPrinter(String manufacturer, String model, int tonerLevelBlack, int tonerLevelBlue, int tonerLevelMagenta, int tonerLevelYellow) {
-        super(manufacturer, model, tonerLevelBlack, tonerLevelBlue, tonerLevelMagenta, tonerLevelYellow);
+    public ColorPrinter(String manufacturer, String model) {
+        super(manufacturer, model);
+        this.tonerLevelBlack = 100;
+        this.tonerLevelBlue = 100;
+        this.tonerLevelMagenta = 100;
+        this.tonerLevelYellow = 100;
     }
 
     @Override
@@ -56,7 +60,7 @@ public class ColorPrinter extends Printer {
     }
 
     public static void main(String[] args) {
-        ColorPrinter myColorPrinter = new ColorPrinter("HP", "Q3000", 100, 100, 100, 100);
+        ColorPrinter myColorPrinter = new ColorPrinter("HP", "Q3000");
         System.out.println(myColorPrinter);
         myColorPrinter.print(10, Color.MAGENTA, true);
         System.out.println(myColorPrinter);
