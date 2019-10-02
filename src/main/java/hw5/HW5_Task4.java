@@ -9,8 +9,8 @@ public class HW5_Task4 {
     public static void main(String[] args) {
         int[] myIntArray = new int[15];
         int evenNumbers = 0;
-        for (int i = 0; i < 15; i++){
-            myIntArray[i] = randomNumber();
+        for (int i = 0; i < myIntArray.length; i++){
+            myIntArray[i] = randomNumberInRange(0, 9);
             System.out.print(i < 14 ? myIntArray[i] + ", " : myIntArray[i]);
             if (myIntArray[i] % 2 == 0){
                 evenNumbers++;
@@ -20,7 +20,7 @@ public class HW5_Task4 {
         System.out.println("Amount of event numbers in the array: " + evenNumbers);
     }
 
-    public static int randomNumber() {
-        return (int) (Math.random() * 10);
+    public static int randomNumberInRange(int min, int max) {
+        return (int) (min + Math.random() * (max - min + 1));
     }
 }

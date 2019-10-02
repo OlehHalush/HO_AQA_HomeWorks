@@ -12,14 +12,14 @@ Using any cycle print all the values of the ArrayList to the console.
 */
 public class HW5_Task5 {
     public static void main(String[] args) {
-        List<String> myArrayList = new ArrayList<String>();
-        myArrayList.add("First");
-        myArrayList.add("Second");
-        myArrayList.add("Third");
-        myArrayList.add("Fourth");
-        myArrayList.add("Fifth");
-        System.out.println(myArrayList.size());
-        for (String i : myArrayList) {
+        List<String> myStringArrayList = new ArrayList<String>();
+        myStringArrayList.add("First");
+        myStringArrayList.add("Second");
+        myStringArrayList.add("Third");
+        myStringArrayList.add("Fourth");
+        myStringArrayList.add("Fifth");
+        System.out.println("The size of array is: " + myStringArrayList.size());
+        for (String i : myStringArrayList) {
             System.out.println(i);
         }
     }
