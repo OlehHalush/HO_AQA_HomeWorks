@@ -11,7 +11,8 @@ public class HW5_Task4 {
         int evenNumbers = 0;
         for (int i = 0; i < myIntArray.length; i++){
             myIntArray[i] = randomNumberInRange(0, 9);
-            System.out.print(i < 14 ? myIntArray[i] + ", " : myIntArray[i]);
+            System.out.print(myIntArray[i]);
+            System.out.print(i != myIntArray.length - 1 ? ", " : "");
             if (myIntArray[i] % 2 == 0){
                 evenNumbers++;
             }

@@ -26,22 +26,22 @@ cherry - berry;
 */
 public class HW5_Task7 {
     public static void main(String[] args) {
-        Map<String, String> MapOfProducts = new HashMap<>();
-        MapOfProducts.put("watermelon", "berry");
-        MapOfProducts.put("banana", "fruit");
-        MapOfProducts.put("cherry", "berry");
-        MapOfProducts.put("pineapple", "fruit");
-        MapOfProducts.put("melon", "vegetable");
-        MapOfProducts.put("cranberry", "berry");
-        MapOfProducts.put("apple", "fruit");
-        MapOfProducts.put("iris", "flower");
-        MapOfProducts.put("potato", "vegetable");
-        MapOfProducts.put("carrot", "vegetable");
+        Map<String, String> mapOfProducts = new HashMap<>();
+        mapOfProducts.put("watermelon", "berry");
+        mapOfProducts.put("banana", "fruit");
+        mapOfProducts.put("cherry", "berry");
+        mapOfProducts.put("pineapple", "fruit");
+        mapOfProducts.put("melon", "vegetable");
+        mapOfProducts.put("cranberry", "berry");
+        mapOfProducts.put("apple", "fruit");
+        mapOfProducts.put("iris", "flower");
+        mapOfProducts.put("potato", "vegetable");
+        mapOfProducts.put("carrot", "vegetable");
 
-        String[] keys = MapOfProducts.keySet().toArray(new String[MapOfProducts.size()]);
+        String[] keys = mapOfProducts.keySet().toArray(new String[mapOfProducts.size()]);
 
         for (String key : keys) {
-            System.out.println(key + " - " + MapOfProducts.get(key));
+            System.out.println(key + " - " + mapOfProducts.get(key));
         }
     }
 }

@@ -8,12 +8,12 @@ Create Map vehicles : vehicles.put("BMW", 5);, print
 */
 public class HW5_Task3 {
     public static void main(String[] args) {
-        Map Vehicle = new HashMap();
-        Vehicle.put("BMW", 5);
-        Vehicle.put("Skoda", "A7");
-        Vehicle.put("Kia", "Sportage");
-        System.out.println("BMW key is mapped to value \"" + Vehicle.get("BMW") + "\"");
-        System.out.println("Keys are: " + Vehicle.keySet());
-        System.out.println("Values are: " + Vehicle.values());
+        Map vehicle = new HashMap();
+        vehicle.put("BMW", 5);
+        vehicle.put("Skoda", "A7");
+        vehicle.put("Kia", "Sportage");
+        System.out.println("BMW key is mapped to value \"" + vehicle.get("BMW") + "\"");
+        System.out.println("Keys are: " + vehicle.keySet());
+        System.out.println("Values are: " + vehicle.values());
     }
 }
