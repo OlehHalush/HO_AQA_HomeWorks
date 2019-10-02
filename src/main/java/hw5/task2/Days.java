@@ -6,10 +6,9 @@ Create ENUM and print.
 public enum Days {
     Sunday,
     Monday,
-    Tuestday,
+    Tuesday,
     Wednesday,
     Thursday,
     Friday,
     Saturday
 }
-

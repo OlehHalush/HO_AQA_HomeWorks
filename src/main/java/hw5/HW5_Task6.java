@@ -12,28 +12,28 @@ If there are several String with the same length - print each from a new line.
 */
 public class HW5_Task6 {
     public static void main(String[] args) {
-        List<String> myArraList = new ArrayList<String>();
-        myArraList.add("String 1");
-        myArraList.add("String 2");
-        myArraList.add("String 3");
-        myArraList.add("String 4");
-        myArraList.add("String 5");
-        myArraList.add("String 6");
-        myArraList.add("String 7");
-        myArraList.add("String 8");
-        myArraList.add("String 9");
-        myArraList.add("String 10");
+        List<String> myStringArraList = new ArrayList<String>();
+        myStringArraList.add("String 1");
+        myStringArraList.add("String 2");
+        myStringArraList.add("String 3");
+        myStringArraList.add("String 4");
+        myStringArraList.add("String 5");
+        myStringArraList.add("String 6");
+        myStringArraList.add("String 7");
+        myStringArraList.add("String 8");
+        myStringArraList.add("String 9");
+        myStringArraList.add("String 10");
 
         int longestString = 0;
         List<String> arrayOfLongestStrings = new ArrayList<String>();
         //Defining the longest string
-        for (String i : myArraList){
+        for (String i : myStringArraList){
             if (i.length() > longestString){
                 longestString = i.length();
             }
         }
         //Printing the longest strings
-        for (String i : myArraList){
+        for (String i : myStringArraList){
             if (i.length() == longestString){
                 arrayOfLongestStrings.add(i);
                 System.out.println(i);

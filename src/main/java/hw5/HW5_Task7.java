@@ -26,22 +26,22 @@ cherry - berry;
 */
 public class HW5_Task7 {
     public static void main(String[] args) {
-        Map<String, String> myMap = new HashMap<>();
-        myMap.put("watermelon", "berry");
-        myMap.put("banana", "fruit");
-        myMap.put("cherry", "berry");
-        myMap.put("pineapple", "fruit");
-        myMap.put("melon", "vegetable");
-        myMap.put("cranberry", "berry");
-        myMap.put("apple", "fruit");
-        myMap.put("iris", "flower");
-        myMap.put("potato", "vegetable");
-        myMap.put("carrot", "vegetable");
+        Map<String, String> MapOfProducts = new HashMap<>();
+        MapOfProducts.put("watermelon", "berry");
+        MapOfProducts.put("banana", "fruit");
+        MapOfProducts.put("cherry", "berry");
+        MapOfProducts.put("pineapple", "fruit");
+        MapOfProducts.put("melon", "vegetable");
+        MapOfProducts.put("cranberry", "berry");
+        MapOfProducts.put("apple", "fruit");
+        MapOfProducts.put("iris", "flower");
+        MapOfProducts.put("potato", "vegetable");
+        MapOfProducts.put("carrot", "vegetable");
 
-        String[] keys = myMap.keySet().toArray(new String[myMap.size()]);
+        String[] keys = MapOfProducts.keySet().toArray(new String[MapOfProducts.size()]);
 
         for (String key : keys) {
-            System.out.println(key + " - " + myMap.get(key));
+            System.out.println(key + " - " + MapOfProducts.get(key));
         }
     }
 }
