@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public class HW1_Task2 {
     byte myByte = 2;

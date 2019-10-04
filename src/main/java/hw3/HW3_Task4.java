@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 /*
 Given an array of 10 integers. To display the sum of all its elements except the first and last.

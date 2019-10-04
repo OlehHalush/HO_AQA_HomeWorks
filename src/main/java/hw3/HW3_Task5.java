@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 /*
 Write a function which calculates and returns the minimum of 4 arguments.

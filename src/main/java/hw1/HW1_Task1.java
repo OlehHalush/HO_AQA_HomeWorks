@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public class HW1_Task1 {
     static String hello = "Hello World";

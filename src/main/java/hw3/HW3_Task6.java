@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 /*
 Write a method named getEvenDigitSum with one parameter of the type "int".

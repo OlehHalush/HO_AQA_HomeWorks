@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 /*
 Write a method named getGreatestCommonDivisor with two parameters of type int named first and second.

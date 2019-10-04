@@ -1,4 +1,4 @@
-package HW3;
+package hw3;
 
 /*
 Fill the array with numbers from 100 to 0.

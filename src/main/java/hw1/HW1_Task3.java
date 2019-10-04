@@ -1,4 +1,4 @@
-package HW1;
+package hw1;
 
 public class HW1_Task3 {
     static int a = 2;
