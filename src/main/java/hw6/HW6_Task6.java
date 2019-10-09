@@ -24,16 +24,12 @@ public class HW6_Task6 {
         BufferedReader br = new BufferedReader(r);
         String number = "";
         try {
-            while (!number.equals("any string")) {
+            while (true) {
                 System.out.println("Enter some number:");
                 myLisOfInts.add(Integer.parseInt(number = br.readLine()));
                 System.out.println("data is: " + number);
             }
-        } catch (IOException ex) {
-            for (int i : myLisOfInts) {
-                System.out.println(i);
-            }
-        } catch (NumberFormatException ex) {
+        } catch (IOException | NumberFormatException ex) {
             for (int i : myLisOfInts) {
                 System.out.println(i);
             }
