@@ -21,7 +21,7 @@ $$(".login")
 $x("//a[@class='login']")
 8) Logo
 $$(".logo.img-responsive")
-$x("//img[@class='logo img-responsive']")
+$x("//div[@id='header_logo']/a[@title='My Store']/img[@alt='My Store']")
 9) Search field
 $$("#search_query_top")
 $x("//input[@id='search_query_top']")
@@ -29,23 +29,23 @@ $x("//input[@id='search_query_top']")
 $$("button[name='submit_search']")
 $x("//button[@name='submit_search']")
 11) Cart
-$$("div.shopping_cart>a")
-$x("//div[@class='shopping_cart']/a")
+$$("div.shopping_cart>a[title='View my shopping cart']")
+$x("//div[@class='shopping_cart']/a[@title='View my shopping cart']")
 12) Women
 $$("a[title='Women']")
 $x("//a[@title='Women']")
 13) Dresses
-$$(".sf-menu.clearfix.menu-content.sf-js-enabled.sf-arrows>li>a[title='Dresses']")
-$x("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li/a[@title='Dresses']")
+$$("#block_top_menu>ul>li>a[title='Dresses']")
+$x("//div[@id='block_top_menu']/ul/li/a[@title='Dresses']")
 14) T-shirts
-$$(".sf-menu.clearfix.menu-content.sf-js-enabled.sf-arrows>li>a[title='T-shirts']")
-$x("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li/a[@title='T-shirts']")
+$$("#block_top_menu>ul>li>a[title='T-shirts']")
+$x("//div[@id='block_top_menu']/ul/li/a[@title='T-shirts']")
 15) "Home" icon
 $$("a[title='Return to Home']")
 $x("//a[@title='Return to Home']")
 16) "Authentication" bread crumb
 No css selector for selecting by text
-$x("//span[text()='	Authentication']")
+$x("//span[normalize-space()='Authentication']")
 17) "Authentication" header
 No css selector for selecting by text
 $x("//h1[text()='Authentication']")
@@ -53,8 +53,8 @@ $x("//h1[text()='Authentication']")
 No css selector for selecting by text
 $x("//h3[text()='Create an account']")
 19) Account creation tool tip
-$$("#create-account_form .form_content.clearfix p")
-$x("//form[@id='create-account_form']/div[@class='form_content clearfix']/p")
+$$("#create-account_form>div>p")
+$x("//form[@id='create-account_form']//p")
 20) "Email Address" title in account creation section
 $$("label[for='email_create']")
 $x("//label[@for='email_create']")
