@@ -23,10 +23,10 @@ shipping , Total всех товаров , Tax и TOTAL общий отобра�
 8. Проверить что корзина пустая
 */
 
-public class HW9_Task2 {
+public class HW10 {
     WebDriver driver;
 
-    public HW9_Task2(WebDriver driver) {
+    public HW10(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -152,26 +152,26 @@ public class HW9_Task2 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src//main//resources//chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        HW9_Task2 HW9_Task2 = new HW9_Task2(driver);
+        HW10 HW10Object = new HW10(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.navigate().to("http://automationpractice.com");
 
-        HW9_Task2.enterIntoSearchField("Blouse");
-        HW9_Task2.clickSearchButton();
-        HW9_Task2.switchToListView();
-        HW9_Task2.addToCart();
-        HW9_Task2.clickProceedToCheckoutButton();
-        HW9_Task2.increaseAmountOfProduct();
-        HW9_Task2.checkTotalForProduct("$54.00");
-        HW9_Task2.checkTotalForProducts("$54.00");
-        HW9_Task2.checkTotalForShipping("$2.00");
-        HW9_Task2.checkTotalWithoutTax("$56.00");
-        HW9_Task2.checkTotalTax("$0.00");
-        HW9_Task2.checkGeneralTotal("$56.00");
-        HW9_Task2.clearCart();
-        HW9_Task2.checkCartIsEmpty("(empty)");
-        HW9_Task2.checkEmptyCartMessage("Your shopping cart is empty.");
+        HW10Object.enterIntoSearchField("Blouse");
+        HW10Object.clickSearchButton();
+        HW10Object.switchToListView();
+        HW10Object.addToCart();
+        HW10Object.clickProceedToCheckoutButton();
+        HW10Object.increaseAmountOfProduct();
+        HW10Object.checkTotalForProduct("$54.00");
+        HW10Object.checkTotalForProducts("$54.00");
+        HW10Object.checkTotalForShipping("$2.00");
+        HW10Object.checkTotalWithoutTax("$56.00");
+        HW10Object.checkTotalTax("$0.00");
+        HW10Object.checkGeneralTotal("$56.00");
+        HW10Object.clearCart();
+        HW10Object.checkCartIsEmpty("(empty)");
+        HW10Object.checkEmptyCartMessage("Your shopping cart is empty.");
         driver.quit();
     }
 }
