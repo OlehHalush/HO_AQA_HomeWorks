@@ -3,6 +3,7 @@ package hw9;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -17,10 +18,10 @@ import java.util.concurrent.TimeUnit;
 например “There are 3 errors
 */
 
-public class HW9_Task1 {
+public class HW9 {
     private WebDriver driver;
 
-    public HW9_Task1(WebDriver driver) {
+    public HW9(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -116,10 +117,16 @@ public class HW9_Task1 {
         registerButton.click();
     }
 
+    public String getErrorText() {
+        String errorText = driver.findElement(By.cssSelector("#center_column>div>p")).getText();
+        return errorText;
+    }
+
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "src//main//resources//chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        HW9_Task1 myObject = new HW9_Task1(driver);
+        HW9 myObject = new HW9(driver);
+        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.navigate().to("http://automationpractice.com");
 
@@ -140,8 +147,7 @@ public class HW9_Task1 {
         myObject.enterAlias();
         myObject.clickRegisterButton();
 
-        String errorText = driver.findElement(By.cssSelector("#center_column>div>p")).getText();
-        Assert.assertEquals("There is 1 error", errorText);
+        Assert.assertEquals("There is 1 error", myObject.getErrorText());
         driver.quit();
     }
 }

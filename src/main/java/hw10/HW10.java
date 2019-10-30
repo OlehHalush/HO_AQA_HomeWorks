@@ -1,11 +1,13 @@
-package hw9;
+package hw10;
 
+import org.apache.http.impl.client.StandardHttpRequestRetryHandler;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
@@ -43,7 +45,6 @@ public class HW10 {
 
     public void switchToListView() {
         WebElement listView = (new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(By.id("list")));
-        // For some reason one one click is not working
         listView.click();
         listView.click();
     }
@@ -61,67 +62,41 @@ public class HW10 {
     public void increaseAmountOfProduct() {
         WebElement addAmountButton = (new WebDriverWait(driver, 5)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[title='Add']")));
         addAmountButton.click();
-
     }
 
-    public void checkTotalForProduct(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_product_price_2_7_0"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_product_price_2_7_0")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in Total for product");
-        }
+    public void checkAmountOfProducts(String value) {
+        Boolean asd = new WebDriverWait(driver, 5)
+                .until(ExpectedConditions.attributeToBe(By.cssSelector("input[name='quantity_2_7_0_0_hidden']"), "value", value));
     }
 
-    public void checkTotalForProducts(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_product"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_product")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in Total products");
-        }
+    public String getTotalForProduct() {
+        String actualAmount = driver.findElement(By.id("total_product_price_2_7_0")).getText();
+        return actualAmount;
     }
 
-    public void checkTotalForShipping(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_shipping"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_shipping")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in Total shipping");
-        }
+    public String getTotalForProducts() {
+        String actualAmount = driver.findElement(By.id("total_product")).getText();
+        return actualAmount;
     }
 
-    public void checkTotalWithoutTax(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_price_without_tax"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_price_without_tax")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in Total without tax");
-        }
+    public String getTotalForShipping() {
+        String actualAmount = driver.findElement(By.id("total_shipping")).getText();
+        return actualAmount;
     }
 
-    public void checkTotalTax(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_tax"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_tax")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in Total Tax");
-        }
+    public String getTotalWithoutTax() {
+        String actualAmount = driver.findElement(By.id("total_price_without_tax")).getText();
+        return actualAmount;
     }
 
-    public void checkGeneralTotal(String expectedAmount) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.id("total_price"), expectedAmount));
-        if (textToBePresent == true) {
-            String actualAmount = driver.findElement(By.id("total_price")).getText();
-            Assert.assertEquals(expectedAmount, actualAmount);
-        } else {
-            System.out.println(expectedAmount + " is not displayed in general Total");
-        }
+    public String getTotalTax() {
+        String actualAmount = driver.findElement(By.id("total_tax")).getText();
+        return actualAmount;
+    }
+
+    public String getGeneralTotal() {
+        String actualAmount = driver.findElement(By.id("total_price")).getText();
+        return actualAmount;
     }
 
     public void clearCart() {
@@ -129,24 +104,15 @@ public class HW10 {
         deleteButton.click();
     }
 
-    public void checkCartIsEmpty(String expectedText) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.cssSelector(".ajax_cart_no_product"), expectedText));
-        if (textToBePresent == true) {
-            String actualText = driver.findElement(By.cssSelector(".ajax_cart_no_product")).getText();
-            Assert.assertEquals(expectedText, actualText);
-        } else {
-            System.out.println(expectedText + "Cart is not empty");
-        }
+    public String getTextFromEmptyCartLabel() {
+        new WebDriverWait(driver, 5).until(ExpectedConditions.invisibilityOfElementWithText(By.cssSelector(".shopping_cart > a > span.ajax_cart_product_txt_s.unvisible"), "Products"));
+        String actualAmount = driver.findElement(By.cssSelector(".ajax_cart_no_product")).getText();
+        return actualAmount;
     }
 
-    public void checkEmptyCartMessage(String expectedText) {
-        Boolean textToBePresent = (new WebDriverWait(driver, 5)).until(ExpectedConditions.textToBe(By.cssSelector(".alert.alert-warning"), expectedText));
-        if (textToBePresent == true) {
-            String actualText = driver.findElement(By.cssSelector(".alert.alert-warning")).getText();
-            Assert.assertEquals(expectedText, actualText);
-        } else {
-            System.out.println(expectedText + "Cart is not empty");
-        }
+    public String getTextFromEmptyCart() {
+        String actualAmount = driver.findElement(By.cssSelector(".alert.alert-warning")).getText();
+        return actualAmount;
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -163,15 +129,20 @@ public class HW10 {
         HW10Object.addToCart();
         HW10Object.clickProceedToCheckoutButton();
         HW10Object.increaseAmountOfProduct();
-        HW10Object.checkTotalForProduct("$54.00");
-        HW10Object.checkTotalForProducts("$54.00");
-        HW10Object.checkTotalForShipping("$2.00");
-        HW10Object.checkTotalWithoutTax("$56.00");
-        HW10Object.checkTotalTax("$0.00");
-        HW10Object.checkGeneralTotal("$56.00");
+        HW10Object.checkAmountOfProducts("2");
+
+        Assert.assertEquals("$54.00", HW10Object.getTotalForProduct());
+        Assert.assertEquals("$54.00", HW10Object.getTotalForProducts());
+        Assert.assertEquals("$2.00", HW10Object.getTotalForShipping());
+        Assert.assertEquals("$56.00", HW10Object.getTotalWithoutTax());
+        Assert.assertEquals("$0.00", HW10Object.getTotalTax());
+        Assert.assertEquals("$56.00", HW10Object.getGeneralTotal());
+
         HW10Object.clearCart();
-        HW10Object.checkCartIsEmpty("(empty)");
-        HW10Object.checkEmptyCartMessage("Your shopping cart is empty.");
+
+        Assert.assertEquals("(empty)", HW10Object.getTextFromEmptyCartLabel());
+        Assert.assertEquals("Your shopping cart is empty.", HW10Object.getTextFromEmptyCart());
+
         driver.quit();
     }
 }
