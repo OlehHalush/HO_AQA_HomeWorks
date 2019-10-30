@@ -21,7 +21,7 @@ public class SignInPage {
         PageFactory.initElements(driver, this);
     }
 
-    public SignInPage enterEmail(){
+    public SignInPage enterEmail() {
         Random randomGenerator = new Random();
         int randomInt1 = randomGenerator.nextInt(1000);
         int randomInt2 = randomGenerator.nextInt(1000);
@@ -30,7 +30,7 @@ public class SignInPage {
         return this;
     }
 
-    public RegistrationPage clickCreateAccountButton(){
+    public RegistrationPage clickCreateAccountButton() {
         createAccountButton.click();
         return new RegistrationPage(driver);
     }

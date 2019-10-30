@@ -11,7 +11,6 @@ import java.util.Random;
 public class RegistrationPage {
     private WebDriver driver;
 
-
     @FindBy(id = "id_gender1")
     private WebElement titleMr;
 
@@ -153,5 +152,21 @@ public class RegistrationPage {
     public String getErrorText() {
         String error = errorText.getText();
         return error;
+    }
+
+    public RegistrationPage fillAccount(Account account) {
+        selectTitle(account.getGender());
+        enterCustomerFirstName(account.getCustomerFirstName());
+        enterCustomerLastName(account.getCustomerLastName());
+        enterCustomerEmail();
+        enterCustomerPassword(account.getCustomerPassword());
+        enterFirstNameAddress(account.getAddressFirstName());
+        enterLastNameAddress(account.getAddressLastName());
+        enterAddress(account.getAddress());
+        enterCity(account.getCity());
+        enterZipCode(account.getZipCode());
+        enterMobilePhone(account.getMobilePhone());
+        enterAlias(account.getAlias());
+        return this;
     }
 }
