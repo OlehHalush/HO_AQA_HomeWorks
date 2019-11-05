@@ -1,5 +1,3 @@
-package HW11_Patterns;
-
 /*
 1. Create a new Maven project;
 2. Add TestNG dependency and Selenium Web Driver;
@@ -13,7 +11,7 @@ WebDriver.
 9. Add your data provider to any test you wish.
 */
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class Main {
 
