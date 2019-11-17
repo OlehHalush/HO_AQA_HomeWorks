@@ -1,13 +1,9 @@
 package HW12_TestNG;
 
-import HW11.DriverType;
-import HW11.WebDriverFactory;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import HW11.*;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
 
 /*
 1. Create a new Maven project;
@@ -22,30 +18,64 @@ WebDriver.
 9. Add your data provider to any test you wish.
 */
 
-public class TestClass1 {
-
-    public WebDriver driver;
-    @BeforeTest
-    public void createDriverInstance() {
-        driver = WebDriverFactory.getDriver(DriverType.CHROME);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.navigate().to("http://automationpractice.com");
-    }
-
-    @AfterTest
-    public void closeDriver(){
-        driver.close();
-        driver.quit();
-    }
-
+public class TestClass1 extends BeforeAndAfter {
     @Test
     public void class1Test1() {
+        driver.navigate().to("http://automationpractice.com");
+        MainPage mainPage = new MainPage(driver);
+        RegistrationPage registrationPage = new RegistrationPage(driver);
+
+        Account account = new Account.AccountBuilder()
+                .withGender("Mr")
+                .withCustomerFirstName("Oleh")
+                .withCustomerLastName("Halush")
+                .withCustomerPassword("123123123")
+                .withAddressFirstName("Oleh")
+                .withAddressLastName("Halush")
+                .withAddress("Some street 5/23")
+                .withCity("Lviv")
+                .withZipCode("12345")
+                .withMobilePhone("123123123")
+                .withAlias("My alias")
+                .build();
+
+        mainPage.clickSignIn()
+                .enterEmail()
+                .clickCreateAccountButton()
+                .fillAccount(account)
+                .clickRegisterButton();
+
+        Assert.assertEquals("There is 1 error", registrationPage.getErrorText());
         System.out.println("class1Test1");
     }
 
     @Test
     public void class1Test2() {
+        driver.navigate().to("http://automationpractice.com");
+        MainPage mainPage = new MainPage(driver);
+        RegistrationPage registrationPage = new RegistrationPage(driver);
+
+        Account account = new Account.AccountBuilder()
+                .withGender("Mr")
+                .withCustomerFirstName("Oleh")
+                .withCustomerLastName("Halush")
+                .withCustomerPassword("123123123")
+                .withAddressFirstName("Oleh")
+                .withAddressLastName("Halush")
+                .withAddress("Some street 5/23")
+                .withCity("Lviv")
+                .withZipCode("12345")
+                .withMobilePhone("123123123")
+                .withAlias("My alias")
+                .build();
+
+        mainPage.clickSignIn()
+                .enterEmail()
+                .clickCreateAccountButton()
+                .fillAccount(account)
+                .clickRegisterButton();
+
+        Assert.assertEquals("There is 1 error", registrationPage.getErrorText());
         System.out.println("class1Test2");
     }
 
