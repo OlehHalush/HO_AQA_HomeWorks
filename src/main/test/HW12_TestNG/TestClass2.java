@@ -3,7 +3,7 @@ package HW12_TestNG;
 import HW11.Account;
 import HW11.MainPage;
 import HW11.RegistrationPage;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
