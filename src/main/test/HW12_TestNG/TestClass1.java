@@ -1,9 +1,8 @@
 package HW12_TestNG;
 
 import HW11.*;
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 /*
 1. Create a new Maven project;
