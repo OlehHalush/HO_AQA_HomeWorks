@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class BaseSteps {
     protected WebDriver driver;
-    protected final Properties config = Config.loadProperties("test.feature.properties");
+    protected final Properties config = Config.loadProperties("test.properties");
 
     protected MainPage mainPage;
     protected RegistrationPage registrationPage;

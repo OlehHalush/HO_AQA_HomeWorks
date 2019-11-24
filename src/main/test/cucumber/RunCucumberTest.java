@@ -8,8 +8,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         features = "src/main/test",
         monochrome = true,
-        tags = "@TestScenarioV1",
-        glue = {"src.main.java"}
+        tags = "@TestScenario1",
+        glue = {"cucumber.steps"}
 )
 
 public class RunCucumberTest {
