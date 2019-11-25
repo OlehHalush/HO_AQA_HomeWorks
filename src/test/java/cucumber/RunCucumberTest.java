@@ -6,7 +6,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/main/test",
+        features = "src/test/java/cucumber/features",
         monochrome = true,
         tags = "@TestScenario1",
         glue = {"cucumber.steps"}
